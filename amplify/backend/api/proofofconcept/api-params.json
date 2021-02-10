@@ -1,0 +1,38 @@
+{
+    "paths": [
+        {
+            "name": "/proof",
+            "lambdaFunction": "loggedinbool",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/GET"
+                ]
+            },
+            "policyResourceName": "/proof"
+        }
+    ],
+    "resourceName": "proofofconcept",
+    "apiName": "proofofconcept",
+    "functionArns": [
+        {
+            "lambdaFunction": "loggedinbool"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-g1betaauthcli-dev-120715-authRole",
+        "unAuthRoleName": "amplify-g1betaauthcli-dev-120715-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "loggedinbool",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
