@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "g1betaauthclie4a19f81": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
