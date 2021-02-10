@@ -1,25 +1,31 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import Home from "./Home";
-import Dashboard  from "./Dashboard";
-import ProtectedRoute from "./protectedRoute";
-import Auth from "./Auth";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import React from 'react';
+import './App.css';
+import Amplify from 'aws-amplify';
+import { AmplifyAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
+import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
+import awsconfig from './aws-exports';
 
+Amplify.configure(awsconfig);
 
-function App() {
-  return (
-    <div className="App">
-      <Auth />
-      <BrowserRouter >
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <ProtectedRoute exact path="/dashboard" component={Dashboard} />
-          <Route path="*" component={() => "404 NOT FOUND"} />
-        </Switch>
-      </BrowserRouter>
-    </div>
+const AuthStateApp = () => {
+    const [authState, setAuthState] = React.useState();
+    const [user, setUser] = React.useState();
+
+    React.useEffect(() => {
+        onAuthUIStateChange((nextAuthState, authData) => {
+            setAuthState(nextAuthState);
+            setUser(authData)
+        });
+    }, []);
+
+  return authState === AuthState.SignedIn && user ? (
+      <div className="App">
+          <div>Hello, {JSON.stringify(user)}</div>
+          <AmplifySignOut />
+      </div>
+    ) : (
+      <AmplifyAuthenticator />
   );
 }
 
-export default App;
+export default AuthStateApp;
