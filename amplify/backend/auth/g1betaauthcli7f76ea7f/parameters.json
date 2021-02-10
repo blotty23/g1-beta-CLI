@@ -1,0 +1,69 @@
+{
+    "identityPoolName": "g1betaauthcli7f76ea7f_identitypool_7f76ea7f",
+    "allowUnauthenticatedIdentities": false,
+    "resourceNameTruncated": "g1beta7f76ea7f",
+    "userPoolName": "g1betaauthcli7f76ea7f_userpool_7f76ea7f",
+    "autoVerifiedAttributes": [
+        "email"
+    ],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [
+        "SMS Text Message"
+    ],
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [],
+    "requiredAttributes": [
+        "email",
+        "name"
+    ],
+    "userpoolClientGenerateSecret": true,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [
+        "email"
+    ],
+    "userpoolClientReadAttributes": [
+        "email"
+    ],
+    "userpoolClientLambdaRole": "g1beta7f76ea7f_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": false,
+    "sharedId": "7f76ea7f",
+    "resourceName": "g1betaauthcli7f76ea7f",
+    "authSelections": "identityPoolAndUserPool",
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    },
+    "unauthRoleArn": {
+        "Fn::GetAtt": [
+            "UnauthRole",
+            "Arn"
+        ]
+    },
+    "useDefault": "defaultSocial",
+    "hostedUI": true,
+    "usernameAttributes": [
+        "email"
+    ],
+    "triggers": "{}",
+    "hostedUIDomainName": "g1betaauthcli7f76ea7f-7f76ea7f",
+    "authProvidersUserPool": [
+        "Google"
+    ],
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"name\":\"name\",\"username\":\"sub\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://main.d3o8oowuxt7w0g.amplifyapp.com/\"],\"LogoutURLs\":[\"https://main.d3o8oowuxt7w0g.amplifyapp.com/\"]}",
+    "userPoolGroupList": [],
+    "serviceName": "Cognito",
+    "usernameCaseSensitive": false,
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "permissions": [],
+    "dependsOn": []
+}
