@@ -1,20 +1,26 @@
 {
-  "dev": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-g1betaauthcli-dev-120715-authRole",
-      "UnauthRoleArn": "arn:aws:iam::261219435789:role/amplify-g1betaauthcli-dev-120715-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::261219435789:role/amplify-g1betaauthcli-dev-120715-authRole",
-      "Region": "eu-west-1",
-      "DeploymentBucketName": "amplify-g1betaauthcli-dev-120715-deployment",
-      "UnauthRoleName": "amplify-g1betaauthcli-dev-120715-unauthRole",
-      "StackName": "amplify-g1betaauthcli-dev-120715",
-      "StackId": "arn:aws:cloudformation:eu-west-1:261219435789:stack/amplify-g1betaauthcli-dev-120715/85bd0350-6b98-11eb-aeba-027a001d5577",
-      "AmplifyAppId": "d3o8oowuxt7w0g"
-    },
-    "categories": {
-      "auth": {
-        "g1betaauthclie4a19f81": {}
-      }
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-g1betaauthcli-dev-120715-authRole",
+            "UnauthRoleArn": "arn:aws:iam::261219435789:role/amplify-g1betaauthcli-dev-120715-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::261219435789:role/amplify-g1betaauthcli-dev-120715-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "amplify-g1betaauthcli-dev-120715-deployment",
+            "UnauthRoleName": "amplify-g1betaauthcli-dev-120715-unauthRole",
+            "StackName": "amplify-g1betaauthcli-dev-120715",
+            "StackId": "arn:aws:cloudformation:eu-west-1:261219435789:stack/amplify-g1betaauthcli-dev-120715/85bd0350-6b98-11eb-aeba-027a001d5577",
+            "AmplifyAppId": "d3o8oowuxt7w0g"
+        },
+        "categories": {
+            "auth": {
+                "g1betaauthclie4a19f81": {}
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d3o8oowuxt7w0g",
+                    "type": "cicd"
+                }
+            }
+        }
     }
-  }
 }
