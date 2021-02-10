@@ -11,6 +11,7 @@ export default function home() {
     <div>
       <h1>Hello from the home page</h1>
       <Link to="/auth"><button>Log in</button></Link>
+      <Link to="/dashboard">Dashboard</Link>
     </div> 
     )
 }
