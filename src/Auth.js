@@ -30,8 +30,6 @@ export default function Auth() {
       </div>
     ) : (
       <AmplifyAuthenticator />)}<br/>
-      <Link to="/">Home Page</Link><br/>
-      <Link to="/dashboard">Dashboard</Link><br/>
     </div>
   )
 }

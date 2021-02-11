@@ -43,6 +43,9 @@ const App = () => {
         </Switch>
       </div>
     </Router>
+    <Link to="/">Home</Link><br/>
+    <Link to="/auth">Log in</Link><br/>
+    <Link to="/dashboard">Dashboard</Link>
     </div>
 };
 

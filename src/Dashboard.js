@@ -83,16 +83,12 @@ function Dashboard() {
   if (loading) return (
       <div>
         <p>"Loading..."</p><br/>
-        <Link to="/">Home Page</Link><br/>
-        <Link to="/auth">Log in</Link>
       </div>
       )
 
   return (
     <div>
       <p>hello. this is your response: {response}</p><br/>
-      <Link to="/">Home Page</Link><br/>
-      <Link to="/auth">Log in</Link><br/>
     </div>
     
     );
