@@ -12,7 +12,10 @@ exports.handler = async (event) => {
          "Access-Control-Allow-Origin": "*",
          "Access-Control-Allow-Headers": "*"
      }, 
-        body: JSON.stringify(event.body),
+        
+        body: JSON.stringify("you are logged in!"),
     };
+    console.log(event);
+    console.log(response)
     return response;
 };
