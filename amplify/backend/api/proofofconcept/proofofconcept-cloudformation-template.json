@@ -14,15 +14,15 @@
         },
     
     
-          "functionloggedinboolName": {
+          "functionnewloggedinName": {
             "Type": "String",
-            "Default": "functionloggedinboolName"
+            "Default": "functionnewloggedinName"
           },
         
           
-          "functionloggedinboolArn": {
+          "functionnewloggedinArn": {
             "Type": "String",
-            "Default": "functionloggedinboolArn"
+            "Default": "functionnewloggedinArn"
           }
         
           
@@ -40,6 +40,102 @@
         }
     },
     "Resources": {
+        
+        "PolicyAPIGWproofofconceptauth": {
+            "DependsOn": [
+              "proofofconcept"
+            ],
+            "Type": "AWS::IAM::Policy",
+            "Properties": {
+              "PolicyName": "PolicyAPIGWproofofconceptauth",
+              "Roles": [
+                {"Ref": "authRoleName"}
+              ],
+              "PolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                  {
+                    "Effect": "Allow",
+                    "Action": [
+                      "execute-api:Invoke"
+                    ],
+                    "Resource": [
+                    
+                    
+                    
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:aws:execute-api:",
+                            {
+                              "Ref": "AWS::Region"
+                            },
+                            ":",
+                            {
+                              "Ref": "AWS::AccountId"
+                            },
+                            ":",
+                            {
+                              "Ref": "proofofconcept"
+                            },
+                            "/",
+                            {
+                              "Fn::If": [
+                                "ShouldNotCreateEnvResources",
+                                "Prod", 
+                                {
+                                  "Ref": "env"
+                                } 
+                              ]
+                            },
+                              "/GET",
+                            "/*"
+                          ]
+                        ]
+                      },
+                                            {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:aws:execute-api:",
+                            {
+                              "Ref": "AWS::Region"
+                            },
+                            ":",
+                            {
+                              "Ref": "AWS::AccountId"
+                            },
+                            ":",
+                            {
+                              "Ref": "proofofconcept"
+                            },
+                            "/",
+                            {
+                              "Fn::If": [
+                                "ShouldNotCreateEnvResources",
+                                "Prod", 
+                                {
+                                  "Ref": "env"
+                                } 
+                              ]
+                            },
+                              "/GET",
+                            ""
+                          ]
+                        ]
+                      }
+                    
+                    
+                    
+                    
+                    
+                    ]
+                  }
+                ]
+              }
+            }
+          },
         
         
         
@@ -157,6 +253,12 @@
                       }
                     }
                   },
+                          
+                    "security": [
+                        {
+                          "sigv4": []
+                        }
+                      ],
                   
                   "x-amazon-apigateway-integration": {
                     "responses": {
@@ -176,7 +278,7 @@
                             
                             {
                                 
-                                "Ref": "functionloggedinboolArn"
+                                "Ref": "functionnewloggedinArn"
                             },
                             
                             "/invocations"
@@ -256,6 +358,12 @@
                       }
                     }
                   },
+                          
+                    "security": [
+                        {
+                          "sigv4": []
+                        }
+                      ],
                   
                   "x-amazon-apigateway-integration": {
                     "responses": {
@@ -275,7 +383,7 @@
                           
                           {
                             
-                            "Ref": "functionloggedinboolArn"
+                            "Ref": "functionnewloggedinArn"
                           },
                           
                           "/invocations"
@@ -332,12 +440,12 @@
                   
         
         
-        "functionloggedinboolPermissionproofofconcept": {
+        "functionnewloggedinPermissionproofofconcept": {
             "Type": "AWS::Lambda::Permission",
             "Properties": {
                 "FunctionName": 
                     {
-                        "Ref":  "functionloggedinboolName"
+                        "Ref":  "functionnewloggedinName"
                     },
                     
                     "Action": "lambda:InvokeFunction",
@@ -367,7 +475,7 @@
         
         
         
-      "DeploymentAPIGWproofofconcept7bc5a5e4": {
+      "DeploymentAPIGWproofofconceptb4daff5c": {
         "Type": "AWS::ApiGateway::Deployment",
         "Properties": {
           "Description": "The Development stage deployment of your API.",

@@ -63,6 +63,7 @@ function Dashboard() {
             setLoading(false)
             setResponse(res)
           }).catch(error => {
+            setLoading(false)
             console.log("oh no, an error!")
             console.log(error.response);
             setResponse(error.response)

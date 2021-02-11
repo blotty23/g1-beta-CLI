@@ -2,9 +2,12 @@
     "paths": [
         {
             "name": "/proof",
-            "lambdaFunction": "loggedinbool",
+            "lambdaFunction": "newloggedin",
             "privacy": {
-                "open": true
+                "private": true,
+                "auth": [
+                    "/GET"
+                ]
             }
         }
     ],
@@ -12,11 +15,11 @@
     "apiName": "proofofconcept",
     "functionArns": [
         {
-            "lambdaFunction": "loggedinbool"
+            "lambdaFunction": "newloggedin"
         }
     ],
     "privacy": {
-        "auth": 0,
+        "auth": 1,
         "unauth": 0,
         "authRoleName": "amplify-g1betaauthcli-dev-120715-authRole",
         "unAuthRoleName": "amplify-g1betaauthcli-dev-120715-unauthRole"
@@ -24,12 +27,12 @@
     "dependsOn": [
         {
             "category": "function",
-            "resourceName": "loggedinbool",
+            "resourceName": "newloggedin",
             "attributes": [
                 "Name",
                 "Arn"
             ]
         }
     ],
-    "uuid": "7bc5a5e4"
+    "uuid": "b4daff5c"
 }

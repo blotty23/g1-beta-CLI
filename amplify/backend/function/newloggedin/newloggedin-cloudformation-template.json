@@ -9,12 +9,6 @@
     },
     "env": {
       "Type": "String"
-    },
-    "deploymentBucketName": {
-      "Type": "String"
-    },
-    "s3Key": {
-      "Type": "String"
     }
   },
   "Conditions": {
@@ -39,12 +33,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "loggedinbool",
+            "newloggedin",
             {
               "Fn::Join": [
                 "",
                 [
-                  "loggedinbool",
+                  "newloggedin",
                   "-",
                   {
                     "Ref": "env"
@@ -74,12 +68,8 @@
         "Layers": [],
         "Timeout": "25",
         "Code": {
-          "S3Bucket": {
-            "Ref": "deploymentBucketName"
-          },
-          "S3Key": {
-            "Ref": "s3Key"
-          }
+          "S3Bucket": "amplify-g1betaauthcli-dev-120715-deployment",
+          "S3Key": "amplify-builds/newloggedin-667731367867766c654b-build.zip"
         }
       }
     },
@@ -89,12 +79,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "g1betaauthcliLambdaRolec0c2a3bc",
+            "g1betaauthcliLambdaRolea506b264",
             {
               "Fn::Join": [
                 "",
                 [
-                  "g1betaauthcliLambdaRolec0c2a3bc",
+                  "g1betaauthcliLambdaRolea506b264",
                   "-",
                   {
                     "Ref": "env"
