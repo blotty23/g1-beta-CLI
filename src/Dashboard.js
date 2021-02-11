@@ -34,7 +34,7 @@ export default function Dashboard() {
     <div>
       {content}
       <Link to="/">Home Page</Link>
-      <Link to="/auth">Log in</Link> }
+      <Link to="/auth">Log in</Link>
     </div>
   )
 }
