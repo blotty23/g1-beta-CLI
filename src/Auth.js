@@ -29,9 +29,9 @@ export default function Auth() {
           <AmplifySignOut />
       </div>
     ) : (
-      <AmplifyAuthenticator />)}
-      <Link to="/">Home Page</Link>
-      <Link to="/dashboard">Dashboard</Link>
+      <AmplifyAuthenticator />)}<br/>
+      <Link to="/">Home Page</Link><br/>
+      <Link to="/dashboard">Dashboard</Link><br/>
     </div>
   )
 }

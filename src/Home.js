@@ -9,8 +9,8 @@ import {
 export default function home() {
   return (
     <div>
-      <h1>Hello from the home page</h1>
-      <Link to="/auth"><button>Log in</button></Link>
+      <h1>Hello from the home page</h1><br/>
+      <Link to="/auth">Log in</Link><br/>
       <Link to="/dashboard">Dashboard</Link>
     </div> 
     )

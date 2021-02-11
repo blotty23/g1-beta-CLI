@@ -6,12 +6,12 @@ import {
 } from "react-router-dom";
 
 export default function Dashboard() {
-  const proofOfConceptApi = "https://bz2j9g1je4.execute-api.eu-west-1.amazonaws.com/dev"
+  const proofOfConceptApi = "https://bz2j9g1je4.execute-api.eu-west-1.amazonaws.com/dev/proof"
   const [content, setContent] = useState()
   const [loading, setLoading] = useState(true)
 
-  axios.defaults.headers.common['Content-Type'] ='application/json;charset=utf-8';
-  axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+  // axios.defaults.headers.common['Content-Type'] ='application/json;charset=utf-8';
+  // axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
   useEffect(()=> {
     setLoading(true)
@@ -20,7 +20,7 @@ export default function Dashboard() {
       cancelToken: new axios.CancelToken (c => cancel = c)
     }).then(res =>{
       setLoading(false)
-      setContent(res)
+      setContent(res.data)
     })
     return () => {cancel()}
   },[])
@@ -29,17 +29,17 @@ export default function Dashboard() {
   
   if (loading) return (
   <div>
-    <p>"Loading..."</p>
-    <Link to="/">Home Page</Link>
+    <p>"Loading..."</p><br/>
+    <Link to="/">Home Page</Link><br/>
     <Link to="/auth">Log in</Link>
   </div>
   )
 
   return (
     <div>
-      {content}
-      <Link to="/">Home Page</Link>
-      <Link to="/auth">Log in</Link>
+      {content}<br/>
+      <Link to="/">Home Page</Link><br/>
+      <Link to="/auth">Log in</Link><br/>
     </div>
   )
 }
