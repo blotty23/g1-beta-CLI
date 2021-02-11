@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios' 
-import Amplify, { API } from 'aws-amplify';
+import Amplify, { API , Auth} from 'aws-amplify';
 import {
   Link
 } from "react-router-dom";
@@ -46,25 +46,54 @@ import {
 
 function Dashboard() {
   const [response, setResponse] = useState();
+  const [loading, setLoading] = useState(true)
   const apiName = 'proofofconcept';
   const path = '/proof'; 
-  const myInit = {} // OPTIONAL
+  const myInit = { };
+  //   headers: { 
+  //     Authorization: `Bearer ${(await Auth.currentSession()).getIdToken().getJwtToken()}`,
+  //   }}
   
-  
-  API
-    .get(apiName, path, myInit)
-    .then(response => {
-      setResponse(response.data)
-    })
-    .catch(error => {
-      console.log("oh no, an error!")
-      console.log(error.response);
-      setResponse(error.response)
-   });
-
+    useEffect(()=> {
+          setLoading(true)
+          let cancel
+          API.get(apiName, path, myInit, {
+            cancelToken: new axios.CancelToken (c => cancel = c)
+          }).then(res =>{
+            setLoading(false)
+            setResponse(res)
+          }).catch(error => {
+            console.log("oh no, an error!")
+            console.log(error.response);
+            setResponse(error.response)
+          });
+          return () => {cancel()}
+        },[])
+  // API
+  //   .get(apiName, path, myInit)
+  //   .then(response => {
+  //     setResponse(response.data)
+  //   })
+  //   .catch(error => {
+  //     console.log("oh no, an error!")
+  //     console.log(error.response);
+  //     setResponse(error.response)
+  //  });
+  if (loading) return (
+      <div>
+        <p>"Loading..."</p><br/>
+        <Link to="/">Home Page</Link><br/>
+        <Link to="/auth">Log in</Link>
+      </div>
+      )
 
   return (
-    <div><p>hello. this is your response: {response}</p></div>
+    <div>
+      <p>hello. this is your response: {response}</p><br/>
+      <Link to="/">Home Page</Link><br/>
+      <Link to="/auth">Log in</Link><br/>
+    </div>
+    
     );
 }
 
