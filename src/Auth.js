@@ -4,6 +4,9 @@ import Amplify from 'aws-amplify';
 import { AmplifyAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
 import awsconfig from './aws-exports';
+import {
+  Link
+} from "react-router-dom";
 
 Amplify.configure(awsconfig);
 
@@ -27,6 +30,8 @@ export default function Auth() {
       </div>
     ) : (
       <AmplifyAuthenticator />)}
+      <Link to="/">Home Page</Link>
+      <Link to="/dashboard">Dashboard</Link>
     </div>
   )
 }
