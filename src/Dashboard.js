@@ -27,8 +27,13 @@ export default function Dashboard() {
 
 
   
-  if (loading) return "Loading..."
-
+  if (loading) return (
+  <div>
+    <p>"Loading..."</p>
+    <Link to="/">Home Page</Link>
+    <Link to="/auth">Log in</Link>
+  </div>
+  )
 
   return (
     <div>
