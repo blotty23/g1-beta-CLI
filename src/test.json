@@ -1,0 +1,26 @@
+{
+  "message": "Network Error",
+  "name": "Error",
+  "stack": "Error: Network Error\n at createError (http://localhost:3000/static/js/vendors~main.chunk.js:266376:15)\n at XMLHttpRequest.handleError (http://localhost:3000/static/js/vendors~main.chunk.js:265870:14)",
+  "config": {
+    "url": "https://bz2j9g1je4.execute-api.eu-west-1.amazonaws.com/dev/proof",
+    "method": "get",
+    "data": null,
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "x-amz-date": "20210211T145913Z",
+      "Authorization": "AWS4-HMAC-SHA256 Credential=undefined/20210211/eu-west-1/execute-api/aws4_request, SignedHeaders=host;x-amz-date, Signature=acabf4f1d0e45b5830ac44813540af80971d34d2beb151e22ae5c884d5f599e8"
+    },
+    "transformRequest": [null],
+    "transformResponse": [null],
+    "timeout": 0,
+    "responseType": "json",
+    "xsrfCookieName": "XSRF-TOKEN",
+    "xsrfHeaderName": "X-XSRF-TOKEN",
+    "maxContentLength": -1,
+    "maxBodyLength": -1,
+    "cancelToken": { "promise": {} },
+    "host": "bz2j9g1je4.execute-api.eu-west-1.amazonaws.com",
+    "path": "/dev/proof"
+  }
+}

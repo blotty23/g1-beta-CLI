@@ -65,8 +65,8 @@ function Dashboard() {
           }).catch(error => {
             setLoading(false)
             console.log("oh no, an error!")
-            console.log(error.response);
-            setResponse(error.response)
+            console.log(error);
+            setResponse(JSON.stringify(error))
           });
           return () => {cancel()}
         },[])
