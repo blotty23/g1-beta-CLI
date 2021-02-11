@@ -4,10 +4,7 @@
             "name": "/proof",
             "lambdaFunction": "loggedinbool",
             "privacy": {
-                "private": true,
-                "auth": [
-                    "/GET"
-                ]
+                "open": true
             }
         }
     ],
@@ -19,7 +16,7 @@
         }
     ],
     "privacy": {
-        "auth": 1,
+        "auth": 0,
         "unauth": 0,
         "authRoleName": "amplify-g1betaauthcli-dev-120715-authRole",
         "unAuthRoleName": "amplify-g1betaauthcli-dev-120715-unauthRole"
@@ -34,5 +31,5 @@
             ]
         }
     ],
-    "uuid": "05381d19"
+    "uuid": "7bc5a5e4"
 }
