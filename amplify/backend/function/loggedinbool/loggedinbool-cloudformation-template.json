@@ -69,7 +69,7 @@
         "Timeout": "25",
         "Code": {
           "S3Bucket": "amplify-g1betaauthcli-dev-120715-deployment",
-          "S3Key": "amplify-builds/loggedinbool-6836754f59696e773371-build.zip"
+          "S3Key": "amplify-builds/loggedinbool-624d4a34564c61687753-build.zip"
         }
       }
     },

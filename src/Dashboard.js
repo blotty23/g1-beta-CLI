@@ -6,6 +6,8 @@ export default function Dashboard() {
   const [content, setContent] = useState()
   const [loading, setLoading] = useState(true)
 
+  axios.defaults.headers.common['Content-Type'] ='application/json;charset=utf-8';
+  axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
   useEffect(()=> {
     setLoading(true)

@@ -9,8 +9,9 @@ console.log(event)
         statusCode: 200,
     //  Uncomment below to enable CORS requests
      headers: {
-         "Access-Control-Allow-Origin": "*",
-         "Access-Control-Allow-Headers": "*"
+        "Access-Control-Allow-Headers" : "Content-Type",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET"
      }, 
         body: JSON.stringify('You are logged in!', event),
     };
