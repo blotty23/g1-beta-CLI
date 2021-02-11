@@ -25,7 +25,8 @@ Amplify.configure(awsconfig);
 
 const App = () => {
 
-      return <div>
+      return (
+       <div>
         <Router>
       <div>
         {/* A <Switch> looks through its children <Route>s and
@@ -42,11 +43,12 @@ const App = () => {
           </Route>
         </Switch>
       </div>
-    </Router>
+    
     <Link to="/">Home</Link><br/>
     <Link to="/auth">Log in</Link><br/>
     <Link to="/dashboard">Dashboard</Link>
-    </div>
+    </Router>
+    </div>)
 };
 
 export default App;
