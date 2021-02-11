@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
-import Amplify, { API } from 'aws-amplify';
-// import { AmplifyAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
-// import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
-import awsconfig from './aws-exports';
+// import Amplify, { API } from 'aws-amplify';
+// // import { AmplifyAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
+// // import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
+// import awsconfig from './aws-exports';
+
 
 import {
   BrowserRouter as Router,
@@ -16,7 +17,11 @@ import Dashboard from "./Dashboard"
 import Home from "./Home"
 import Auth from "./Auth"
 
+import Amplify, { API } from 'aws-amplify';
+import awsconfig from './aws-exports';
+
 Amplify.configure(awsconfig);
+
 
 const App = () => {
 
