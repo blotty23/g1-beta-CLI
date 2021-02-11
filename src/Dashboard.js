@@ -36,12 +36,12 @@ import Amplify, { API } from 'aws-amplify';
 
 function getData() { 
   const apiName = 'MyApiName';
-  const path = '/path';
-  const myInit = { // OPTIONAL
-    headers: {}, // OPTIONAL
-  };
+  const path = '/';
+  // const myInit = { // OPTIONAL
+    // headers: {}, // OPTIONAL
+  // };
 
-  return API.get(apiName, path, myInit);
+  return API.get(apiName, path);
 }
 
 async function makeCall() {
